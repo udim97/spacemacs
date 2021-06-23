@@ -1,0 +1,92 @@
+(unless (>= emacs-major-version 24)
+  (error "requires Emacs 24 or later"))
+
+(deftheme vscode "Space Grey theme for Emacs")
+
+(custom-theme-set-variables
+ 'vscode
+ '(linum-format " %5i "))
+
+(let (
+      (class '((class color) (min-colors 257)))
+      (terminal-class '((class color) (min-colors 89)))
+      (background "#1e1e1e")
+      (background "#1e1e1e")
+      (lineNumbers "#979797")
+      (text "#c0c5ce")
+      (textSelection "#003a52")
+      (comments "#608b4e")
+      (keywords "#c586c0")
+      (variables "#c0c5ce")
+      (functions "#dcdcaa")
+      (methods "#dcdcaa")
+      (strings "#ce9178")
+      (constants "#569cd6")
+      (types "#4ec9b0")
+      (white "#ffffff")
+      (companyBG "#2d2d30")
+      (companySelection "#073655")
+      (companyScrollbarFg "#4b4b4c")
+      (companyScrollbarBg "#303030")
+      (companyTooltipCommon "#219ae4")
+      (companyPreviewCommon "#219ae4")
+      (companyTooltipAnnotationSelection "#84aaff")
+      (companyTooltipAnnotation "#909090")
+      (companyTemplateField "#455555")
+      (preprocessor "#c586c0")
+      (helmSelection "#354545")
+      (helmSourceHeader "#1a3a3a")
+      (helmSourceHeaderHeight 1.3)
+      (helmMatch "#009984")
+      (helmCandidateNumber "#009984")
+      (helmDirectory "#729fcf")
+      (helmFiles "#fcffff")
+      (helmExecutebals "#8ae234")
+      )
+
+  (custom-theme-set-faces
+   'vscode
+
+   `(default ((t (:foreground, text :background , background))))
+   `(cursor  ((,class (:background, white))))
+   `(fringe  ((t (:background, background :foreground , white))))
+   `(region  ((t (:background, textSelection))))
+   `(linum   ((t (:foreground, lineNumbers))))
+
+   `(font-lock-preprocessor-face      ((t (:foreground, preprocessor))))
+   `(font-lock-keyword-face           ((t (:foreground, keywords))))
+   `(font-lock-type-face              ((t (:foreground, types))))
+   `(font-lock-constant-face          ((t (:foreground, constants))))
+   `(font-lock-variable-name-face     ((t (:foreground, variables))))
+   `(font-lock-string-face            ((t (:foreground, strings))))
+   `(font-lock-comment-face           ((t (:foreground, comments))))
+   `(font-lock-comment-delimiter-face ((t (:foreground, comments))))
+   `(font-lock-function-name-face     ((t (:foreground, functions))))
+   `(font-lock-doc-string-face        ((t (:foreground, strings))))
+   `(company-tooltip                  ((t (:background, companyBG))))
+   `(company-tooltip-selection        ((t (:background, companySelection))))
+   `(company-scrollbar-bg             ((t (:background, companyScrollbarBg))))
+   `(company-scrollbar-fg             ((t (:background, companyScrollbarFg))))
+   `(company-tooltip-common           ((t (:foreground, companyTooltipCommon))))
+   `(company-tooltip-annotation       ((t (:foreground, companyTooltipAnnotation))))
+   `(company-tooltip-annotation-selection ((t (:foreground, companyTooltipAnnotationSelection))))
+   `(company-preview-common           ((t (:foreground, companyPreviewCommon :background, companySelection))))
+   `(company-template-field           ((t (:background, companyTemplateField))))
+   `(helm-selection                   ((t (:background, helmSelection))))
+   `(helm-source-header               ((t (:background, helmSourceHeader :height, helmSourceHeaderHeight :family, "Sans Serif"))))
+   `(helm-match                       ((t (:foreground, helmMatch))))
+   `(helm-candidate-number            ((t (:background, helmCandidateNumber))))
+   `(helm-ff-directory                ((t (:foreground, helmDirectory))))
+   `(helm-ff-file                     ((t (:foreground, helmFiles))))
+   `(helm-ff-executable               ((t (:foreground, helmExecutebals))))
+
+   )
+
+  )
+
+(when (and (boundp 'custom-theme-load-path) load-file-name)
+  (add-to-list 'custom-theme-load-path
+               (file-name-as-directory (file-name-directory load-file-name))))
+
+
+(provide-theme 'vscode)

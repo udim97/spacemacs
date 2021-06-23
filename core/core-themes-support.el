@@ -299,6 +299,7 @@
     (wilson                           . sublime-themes)
     (zonokai-blue                     . zonokai-theme)
     (zonokai-red                      . zonokai-theme)
+    (vscode                           . vscode-theme)
     )
   "alist matching a theme name with its package name, required when
 package name does not match theme name + `-theme' suffix.")
